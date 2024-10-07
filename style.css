@@ -1,0 +1,214 @@
+:root {
+  --hospital-color: #0288D1;
+  --police-color: #1565C0;
+  --school-color: #4CAF50;
+  --risk-area-color: #FFA000;
+  --crime-incident-color: #D32F2F;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.poi {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+}
+
+.poi::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #FFFFFF;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 95%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+
+.poi .icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.poi .icon svg {
+  height: 20px;
+  width: auto;
+}
+
+.poi .details {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.poi .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.poi .address, .poi .type, .poi .phone, .poi .website, .poi .emergency, .poi .specialties, .poi .jurisdiction, .poi .education, .poi .disaster, .poi .risk, .poi .crime, .poi .date {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.poi .address {
+  color: #9E9E9E;
+}
+
+.poi .website a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.poi .website a:hover {
+  text-decoration: underline;
+}
+
+.poi.highlight {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  height: auto;
+  padding: 8px 15px;
+  width: 250px;
+}
+
+.poi.highlight::after {
+  border-top: 9px solid #FFFFFF;
+}
+
+.poi.highlight .details {
+  display: flex;
+}
+
+.poi.highlight .icon svg {
+  width: 50px;
+  height: 50px;
+}
+
+.poi.highlight:has(.fa-hospital) .icon {
+  color: var(--hospital-color);
+}
+
+.poi:not(.highlight):has(.fa-hospital) {
+  background-color: var(--hospital-color);
+}
+
+.poi:not(.highlight):has(.fa-hospital)::after {
+  border-top: 9px solid var(--hospital-color);
+}
+
+.poi.highlight:has(.fa-building-shield) .icon {
+  color: var(--police-color);
+}
+
+.poi:not(.highlight):has(.fa-building-shield) {
+  background-color: var(--police-color);
+}
+
+.poi:not(.highlight):has(.fa-building-shield)::after {
+  border-top: 9px solid var(--police-color);
+}
+
+.poi.highlight:has(.fa-school) .icon {
+  color: var(--school-color);
+}
+
+.poi:not(.highlight):has(.fa-school) {
+  background-color: var(--school-color);
+}
+
+.poi:not(.highlight):has(.fa-school)::after {
+  border-top: 9px solid var(--school-color);
+}
+
+.poi.highlight:has(.fa-triangle-exclamation) .icon {
+  color: var(--risk-area-color);
+}
+
+.poi:not(.highlight):has(.fa-triangle-exclamation) {
+  background-color: var(--risk-area-color);
+}
+
+.poi:not(.highlight):has(.fa-triangle-exclamation)::after {
+  border-top: 9px solid var(--risk-area-color);
+}
+
+.poi.highlight:has(.fa-circle-exclamation) .icon {
+  color: var(--crime-incident-color);
+}
+
+.poi:not(.highlight):has(.fa-circle-exclamation) {
+  background-color: var(--crime-incident-color);
+}
+
+.poi:not(.highlight):has(.fa-circle-exclamation)::after {
+  border-top: 9px solid var(--crime-incident-color);
+}
+
+:root {
+  --hospital-color: #0288D1;
+  --police-color: #1565C0;
+  --school-color: #4CAF50;
+  --risk-area-color: #FFA000;
+  --crime-incident-color: #D32F2F;
+}
+
+.legend {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.legend h3 {
+  margin-top: 0;
+}
+
+.legend-item {
+  align-items: center;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+
+.legend-label {
+  font-size: 12px;
+}

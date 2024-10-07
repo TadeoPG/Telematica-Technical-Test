@@ -1,0 +1,27 @@
+{
+  "name": "telematica-technical-test",
+  "description": "Points of interes in Lima, Peru - Google Maps",
+  "version": "2.1.4",
+  "keywords": [
+    "google",
+    "javascript",
+    "maps",
+    "samples"
+  ],
+  "files": [],
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build --outDir dist --base './'",
+    "test": "tsc --no-emit",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.53.5",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.6"
+  },
+  "private": true,
+  "dependencies": {}
+}
